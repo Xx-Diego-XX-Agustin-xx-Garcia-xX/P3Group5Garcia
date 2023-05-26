@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float horizontalInput;
-    public float verticalInput;
+    private float horizontalInput;
+    private float verticalInput;
     public float speed = 50;
     public GameObject playerProjectile;
     public float fireRate = 2f;
-    public Vector3 offset = new Vector3 (0, 0, 2f);
-    public float xRange = 35;
+    private float xRange = 35;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
+            Vector3 offset = new Vector3 (0, 0, 4f);
             Instantiate(playerProjectile, transform.position + offset, playerProjectile.transform.rotation);
         }
     }

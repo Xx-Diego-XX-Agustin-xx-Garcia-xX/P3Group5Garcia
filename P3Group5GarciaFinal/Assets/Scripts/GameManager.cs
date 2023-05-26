@@ -5,13 +5,15 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] obstacles;
-    public int Index;
+    private int Index;
     private float spawnRate = 0.005f;
+    public bool isGameActive;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnObstacles", 1, spawnRate);
+           InvokeRepeating("SpawnObstacles", 1, spawnRate);
     }
 
     // Update is called once per frame
