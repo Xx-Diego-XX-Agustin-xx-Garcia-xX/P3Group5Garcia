@@ -8,13 +8,12 @@ public class PlayerController : MonoBehaviour
     private float verticalInput;
     public float speed = 50;
     public GameObject playerProjectile;
-    public float fireRate = 2f;
-    private float xRange = 35;
+    private float xRange = 45;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -38,13 +37,13 @@ public class PlayerController : MonoBehaviour
         }
 
         // Bounds the player vertically
-        if (transform.position.y > 22)
+        if (transform.position.y > 32)
         {
-            transform.position = new Vector3(transform.position.x, 22, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 32, transform.position.z);
         }
-        if (transform.position.y < -8)
+        if (transform.position.y < -14)
         {
-            transform.position = new Vector3(transform.position.x, -8, transform.position.z);
+            transform.position = new Vector3(transform.position.x, -14, transform.position.z);
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) 

@@ -5,8 +5,8 @@ using UnityEngine;
 public class Crosshair : MonoBehaviour
 {
     public Texture2D crosshair;
-    private int cursorWidth = 32;
-    private int cursorHeight = 32;
+    private int cursorWidth = 16;
+    private int cursorHeight = 16;
     private Transform myTransform;
     private Camera myCamera;
     public float xOffset = 10;
@@ -16,13 +16,13 @@ public class Crosshair : MonoBehaviour
     void Start()
     {
         myCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
-        myTransform = transform;    //So you don't GetComponent your transform with every OnGUI call
+        myTransform = transform;
     }
 
     private void OnGUI()
     {
         Vector3 screenPos = myCamera.WorldToScreenPoint(myTransform.position);
-        screenPos.y = Screen.height - screenPos.y; //The y coordinate on screenPos is inverted so we need to set it straight
+        screenPos.y = Screen.height - screenPos.y; 
         GUI.DrawTexture(new Rect(screenPos.x - xOffset, screenPos.y + yOffset, cursorWidth, cursorHeight), crosshair);
     }
 
