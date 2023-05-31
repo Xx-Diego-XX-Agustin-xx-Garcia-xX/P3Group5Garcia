@@ -129,6 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mineSpeed: 50
+  life: 1
+  hasAlreadyDamaged: 0
 --- !u!1 &1477775695293060550
 GameObject:
   m_ObjectHideFlags: 0

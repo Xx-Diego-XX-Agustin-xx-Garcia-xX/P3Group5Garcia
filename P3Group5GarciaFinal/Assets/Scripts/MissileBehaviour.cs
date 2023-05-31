@@ -10,5 +10,15 @@ public class MissileBehaviour : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * missileSpeed * Time.deltaTime);
+
+        if (transform.position.z > 625)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
     }
 }

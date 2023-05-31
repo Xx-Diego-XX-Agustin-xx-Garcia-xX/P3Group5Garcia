@@ -34,10 +34,15 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (curHealth == 0)
+        if (curHealth <= 0)
         {
             Dead = true;
             gameManager.GameOver();
+        }
+
+        if (curHealth > maxHealth)
+        {
+            curHealth = 100;
         }
     }
 }
